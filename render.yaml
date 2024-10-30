@@ -1,13 +1,13 @@
 databases:
   - name: mysitedb
     plan: free
-    databaseName: invoice
-    user: invoice
+    databaseName: bookproject
+    user: bookproject
 
 services:
   - type: web
     plan: free
-    name: invoice
+    name: bookproject
     runtime: python
     startCommand: "python -m gunicorn invoice.asgi:application -k uvicorn.workers.UvicornWorker"
     envVars:
